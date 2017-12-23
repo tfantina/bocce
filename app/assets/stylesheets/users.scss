@@ -1,0 +1,16 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.wrapper {
+  width: 100%;
+  grid-template-columns: 30% 70%;
+  display: grid;
+}
+.left-card {
+  grid-column: 1;
+  background-color: #343a40;
+}
+.right-card {
+  grid-column: 2;
+}

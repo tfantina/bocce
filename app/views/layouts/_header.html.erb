@@ -1,0 +1,49 @@
+<header>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Bocce🔴🔵</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarDropDown" aria-controls="navbarDropDown"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarDropDown">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <%= link_to 'About', about_path, class: "nav-link"%>
+        </li>
+        <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete,
+              class: "nav-link" %>
+        </li>
+
+        <% else %>
+        <li class="nav-item">
+          <%= link_to 'Sign In', user_session_path, class: "nav-link"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Sign Up', new_user_registration_path, class: "nav-link" %>
+        </li>
+        <% end %>
+
+      </ul>
+    </div>
+    <%= %>
+    <% if user_signed_in? %>
+    <%= form_tag search_users_path, method: :get do %>
+      <%= text_field_tag :search, params[:search] %>
+
+        <%= button_tag(type: "submit", class: "search") do %>
+        <%= fa_icon "fas search" %>
+        <% end %>
+    <% end %>
+    <span class="navbar-text">
+
+      Hello <%= link_to truncate_username(current_user.name), edit_user_registration_path %>
+    </span>
+    <% end %>
+
+
+  </nav>
+
+</header>

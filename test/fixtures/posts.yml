@@ -1,0 +1,14 @@
+post_one:
+  title: The first post!
+  body: Just a bit of dummmy text!
+  user_id: 1
+  
+post_two:
+  title: You don't need a post body for this to work!
+  body:
+  user_id: 2
+  
+post_three:
+  title: Just another post
+  body: should start using Faker
+  user_id: 1

@@ -1,0 +1,40 @@
+<%= form_for @post do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, id: "post-title", onkeyup: "postTitleInputs()" %>
+  <br/>
+  <div id="post-body">
+    <%= f.label :body %>
+    <%= f.text_area :body, id: "post-body-text" %>
+  </div>
+  <br/>
+  <%= f.submit "Post" %>
+<% end %>
+
+
+<script>
+
+document.getElementById('post-body').style.display = 'none';
+let titleLength = document.getElementById('post-title');
+let postBody = document.getElementById('post-body');
+let postBodyText = document.getElementById('post-body-text');
+
+
+function postTitleInputs() {
+
+  if (titleLength.value.length > 22) {
+    postBody.style.display = 'inline-block';
+    //titleLength.appendChild("...");
+    titleLength.blur();
+    postBodyText.focus();
+  }
+}
+
+//function postBodyInputs() {
+  //if (postBodyText.value.length < 1) {
+  //  postBody.style.display = 'none';
+
+  //}
+//});
+
+
+</script>
