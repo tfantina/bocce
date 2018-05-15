@@ -1,3 +1,4 @@
 <% @users.each do |usr|%>
-  <%= usr.name %>
+  
+  <%= link_to usr.name, user_path(usr) %>
 <% end %>

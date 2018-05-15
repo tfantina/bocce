@@ -3,12 +3,17 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  
+  <div class="field">
+
+          <%= f.file_field :profile_pic %>
+
+    
+  </div>
  <div class="field">
    <%= f.label :name %></br>
    <%= f.text_field :name %>
  </div>
-    
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
@@ -16,8 +21,8 @@
     <%= f.label "About" %></br>
     <%= f.text_area :bio %>
   </div>
-  
-  
+
+
 
   <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />

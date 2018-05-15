@@ -11,5 +11,22 @@ class UsersController < ApplicationController
     @users = User.where(["name LIKE ?", "%#{params[:search]}%"])
   end
 
+  def relationship
+      @friend = current_user.friendship.build(friendship_params)
+      if  @friend.save
+        redirect_to current_user
+      else
+       render 'static_pages/home'
+     end
+   end
+
+
+
+  private
+
+  def friendship_params
+      params.require(:friendship).permit()
+  end
+
 
 end
