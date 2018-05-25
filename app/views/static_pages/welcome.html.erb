@@ -1,4 +1,35 @@
+<<<<<<< HEAD
 <div class="root_bg">
   <h1>Bocce</h1>
 <h2>A Social Micro-Network</h2>
+=======
+<div id='grade'>
+  <div id="welcome-plate">
+<h1>Bocce</h1>
+<h2>A Social Micro-Network</h2>
+
+<%= form_for(:user, :url => session_path(:user)) do |f| %>
+  <div class="field-tiny">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field-tiny">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end -%>
+
+  <div class="actions">
+    <%= f.submit "Log in" %>
+  </div>
+<% end %>
+</div>
+>>>>>>> Design
 </div>

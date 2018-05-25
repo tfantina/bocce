@@ -2,6 +2,45 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+<<<<<<< HEAD
 .root_bg {
     background: linear-gradient(#8f25e6, #f72b18)
+=======
+html {
+  height: 100%;
+  width: 100%;
+
+}
+#grade {
+  background: linear-gradient(155deg, #8f25e6, #f72b18);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  width: 100%;
+  grid-template: repeat(9, 1fr)/repeat(3, 1fr);;
+  display: grid;
+}
+
+#welcome-plate {
+  grid-column: 2;
+  grid-row: 3;
+  color: #ffffff;
+  align-content: center;
+
+}
+
+.field-tiny {
+  border-radius: 2px;
+  size: 14px;
+  input {
+    border-radius: 4px;
+    border-style: none;
+    margin-bottom: 5px;
+  }
+
+  label {
+    margin-bottom: 4px;
+
+  }
+>>>>>>> Design
 }

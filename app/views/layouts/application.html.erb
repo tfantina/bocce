@@ -10,11 +10,17 @@
   </head>
 
   <body>
+    <% if current_page?(root_path) %>
+    <%= notice %>
+    <%= alert %>
+    <%= yield %>
+    <% else %>
     <%= render 'layouts/header' %>
     <div class="container">
     <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
-    <%= yield %>
-  </div>
+  <%= yield %>
+    </div>
+    <% end %>
   </body>
 </html>
