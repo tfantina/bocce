@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'friends/index'
+
+  get 'friends/destroy'
+
+  resources :friend_requests
   devise_for :users
   resources :users, only: [:show] do
     collection do
