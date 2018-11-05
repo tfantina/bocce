@@ -1,3 +1,6 @@
+<% if !@friendship.empty? %>
 <%= form_for @friendship do |friend| %>
   <%= friend.submit %>
   <% end %>
+
+<% end %>

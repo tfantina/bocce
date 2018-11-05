@@ -2,7 +2,8 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    render text: "hello"
+    @posts = Post.where(user_id: current_user.id).order(created_at: :desc)
+
   end
   def show
     @post = Post.find(params[:id])

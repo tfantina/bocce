@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @posts = Post.where(user_id: @user.id).order(created_at: :desc)
     @post = Post.new
+    @friendship = Friendship.where(user_id: @user.id)
   end
 
   def search
